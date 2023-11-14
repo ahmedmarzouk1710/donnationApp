@@ -1,9 +1,6 @@
 package com.ahmed.petapp.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,7 +11,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.ahmed.petapp.Database.AppDatabase;
 import com.ahmed.petapp.Module.Donation;
@@ -34,6 +34,7 @@ public class DonnationsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Switch switchDonationPrivacy;
 
     private RadioGroup rgDonationAmount;
     private EditText etDonationCustom;
@@ -42,6 +43,9 @@ public class DonnationsFragment extends Fragment {
     private ImageView ivDonationImpact;
 
     private int selectedDonationAmount = 10;
+    private  boolean privacyicon;
+
+
 
     public DonnationsFragment() {
         // Required empty public constructor
@@ -84,6 +88,8 @@ public class DonnationsFragment extends Fragment {
         btnDonate = view.findViewById(R.id.btn_donate);
         pbDonationProgress = view.findViewById(R.id.pb_donation_progress);
         ivDonationImpact = view.findViewById(R.id.iv_donation_impact);
+        switchDonationPrivacy = view.findViewById(R.id.switch_donation_privacy);
+
 
         // Set default radio button selection
         rgDonationAmount.check(R.id.rb_donation_10);
@@ -148,9 +154,12 @@ public class DonnationsFragment extends Fragment {
             // Simulate donation processing
             pbDonationProgress.setVisibility(View.VISIBLE);
             ivDonationImpact.setVisibility(View.VISIBLE);
+            //Switch switchDonationPrivacy = v.findViewById(R.id.switch_donation_privacy);
+            boolean isPublic = switchDonationPrivacy.isChecked();
+
 
             // Create a new Donation object
-            Donation donation = new Donation("John Doe", "Money", String.valueOf(selectedDonationAmount), "Credit Card", "2023-11-14");
+            Donation donation = new Donation("John Doe",isPublic, "Money", String.valueOf(selectedDonationAmount), "Credit Card", "2023-11-14");
 
             // Insert the donation into the database
             AppDatabase.getAppDatabase(getContext()).donationDao().insertDonation(donation);
