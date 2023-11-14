@@ -9,6 +9,8 @@ public class Donation {
     private Long id;
 
     private String donorName;
+    private boolean isPublic;  // New field for privacy settings
+
     private String donationType;
     private String donationAmount;
     private String paymentMethod;
@@ -17,8 +19,20 @@ public class Donation {
     public Donation() {
     }
 
-    public Donation(String donorName, String donationType, String donationAmount, String paymentMethod, String donationDate) {
+    public Donation(Long id, String donorName, boolean isPublic, String donationType, String donationAmount, String paymentMethod, String donationDate) {
+        this.id = id;
         this.donorName = donorName;
+        this.isPublic = isPublic;
+        this.donationType = donationType;
+        this.donationAmount = donationAmount;
+        this.paymentMethod = paymentMethod;
+        this.donationDate = donationDate;
+    }
+
+
+    public Donation(String donorName, boolean isPublic, String donationType, String donationAmount, String paymentMethod, String donationDate) {
+        this.donorName = donorName;
+        this.isPublic = isPublic;
         this.donationType = donationType;
         this.donationAmount = donationAmount;
         this.paymentMethod = paymentMethod;
@@ -27,6 +41,8 @@ public class Donation {
 
     public Donation(String donorName, String donationType, String donationAmount) {
     }
+
+
 
     public Long getId() {
         return id;
@@ -74,6 +90,13 @@ public class Donation {
 
     public void setDonationDate(String donationDate) {
         this.donationDate = donationDate;
+    }
+    public boolean isPublic() {
+        return isPublic;
+    }
+
+    public void setPublic(boolean isPublic) {
+        this.isPublic = isPublic;
     }
 
 }

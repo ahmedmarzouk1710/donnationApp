@@ -1,7 +1,6 @@
 package com.ahmed.petapp.DAO;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -20,7 +19,8 @@ public interface DonationDAO {
 
     @Query("SELECT * FROM donations WHERE id = :donationId")
     Donation getDonationById(long donationId);
-
+    @Query("SELECT * FROM donations WHERE isPublic = :publicOnly")
+    List<Donation> getPublicDonations(boolean publicOnly);
 
     @Update
     void updateDonation(Donation donation);
