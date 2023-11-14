@@ -27,10 +27,13 @@ import android.widget.Toast;
 import com.ahmed.petapp.Activity.addPost;
 import com.ahmed.petapp.Fragments.AdoptionFragment;
 import com.ahmed.petapp.Fragments.CommunityFragment;
+import com.ahmed.petapp.Fragments.DonationListFragment;
+import com.ahmed.petapp.Fragments.DonnationsFragment;
 import com.ahmed.petapp.Fragments.HomeFragment;
 import com.ahmed.petapp.Fragments.MarketplaceFragment;
 import com.ahmed.petapp.Fragments.MedicalFragment;
 import com.ahmed.petapp.Fragments.ProfileFragment;
+import com.ahmed.petapp.Fragments.ShortsFragment;
 import com.example.petapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if(item.getItemId() == R.id.home){
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.shorts) {
-                replaceFragment(new CommunityFragment());
+                replaceFragment(new ShortsFragment());
             }else if (item.getItemId() == R.id.adoption) {
                 replaceFragment(new AdoptionFragment());
             }else if (item.getItemId() == R.id.marketplace) {
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-      fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showBottomDialog();
@@ -165,25 +168,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-       int itemId=item.getItemId();
-       if(itemId == R.id.nav_home){
-           replaceFragment(new HomeFragment());
-       } else if (itemId== R.id.nav_adoption) {
-           replaceFragment(new AdoptionFragment());
-       }else if (itemId== R.id.nav_market) {
-           replaceFragment(new MarketplaceFragment());
-       }else if (itemId== R.id.nav_profile) {
-           replaceFragment(new ProfileFragment());
-       }else if (itemId== R.id.nav_donnation) {
-           replaceFragment(new DonnationsFragment());
-       }else if (itemId== R.id.nav_medical) {
-           replaceFragment(new MedicalFragment());
-       }else if (itemId== R.id.nav_forum) {
-           replaceFragment(new CommunityFragment());
-       }
-       drawerlayout.closeDrawer(GravityCompat.START);
-        return true;
+        int itemId=item.getItemId();
+        if(itemId == R.id.nav_home){
+            replaceFragment(new HomeFragment());
+        } else if (itemId== R.id.nav_adoption) {
+            replaceFragment(new AdoptionFragment());
+        }else if (itemId== R.id.nav_market) {
+            replaceFragment(new MarketplaceFragment());
+        }else if (itemId== R.id.nav_profile) {
+            replaceFragment(new ProfileFragment());
+        }else if (itemId== R.id.nav_donnation) {
+            replaceFragment(new DonnationsFragment());
+        }else if (itemId== R.id.nav_medical) {
+            replaceFragment(new MedicalFragment());
+        }else if (itemId== R.id.nav_forum) {
+            replaceFragment(new CommunityFragment());
         }
+        else if (itemId == R.id.nav_donation_list) {
+            replaceFragment(new DonationListFragment()); // Add this block for Donation List
+        }
+        drawerlayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
     public void onAddPostClick(View view) {
         // Open the activity_addd_post.xml layout when the "Add post" item is clicked
         startActivity(new Intent(this, addPost.class));

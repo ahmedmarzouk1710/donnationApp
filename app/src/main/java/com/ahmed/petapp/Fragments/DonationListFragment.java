@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ahmed.petapp.Database.AppDatabase;
+import com.ahmed.petapp.Module.Donation;
 import com.example.petapp.R;
 import java.util.List;
 public class DonationListFragment extends Fragment {
