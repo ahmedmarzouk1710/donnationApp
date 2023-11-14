@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if(item.getItemId() == R.id.home){
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.shorts) {
-                replaceFragment(new ShortsFragment());
+                replaceFragment(new CommunityFragment());
             }else if (item.getItemId() == R.id.adoption) {
                 replaceFragment(new AdoptionFragment());
             }else if (item.getItemId() == R.id.marketplace) {
