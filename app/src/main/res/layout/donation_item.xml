@@ -1,0 +1,59 @@
+<!-- donation_item.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="16dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/donorNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donor Name: "
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/cardview_dark_background" />
+
+        <TextView
+            android:id="@+id/donationTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Type: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/donationAmountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Amount: $"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/paymentMethodTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Method: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/donationDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Date: "
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/privacyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/privacy"
+            android:contentDescription="Privacy Icon" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

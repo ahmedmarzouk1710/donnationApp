@@ -12,7 +12,7 @@ import com.ahmed.petapp.Module.Donation;
 import com.ahmed.petapp.Module.Post;
 
 @Database(entities = {Post.class, Donation.class}
-        , version = 2
+        , version = 3
         , exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;

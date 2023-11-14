@@ -41,6 +41,11 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/baseline_info_24"
             android:title="Profile"/>
+        <item
+            android:id="@+id/nav_donation_list"
+            android:icon="@drawable/baseline_favorite_24"
+            android:title="Donations List"
+            />
 
     </group>
     <item

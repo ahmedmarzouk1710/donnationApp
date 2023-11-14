@@ -15,6 +15,15 @@
         android:textColor="@color/lavender"
         android:layout_gravity="top|center_horizontal" />
 
+
+    <Switch
+        android:id="@+id/switch_donation_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+
+        android:text="Make donation private" />
+
     <RadioGroup
         android:id="@+id/rg_donation_amount"
         android:layout_width="wrap_content"
@@ -26,8 +35,8 @@
             android:id="@+id/rb_donation_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$10"
-            android:checked="true" />
+            android:checked="true"
+            android:text="$10" />
 
         <RadioButton
             android:id="@+id/rb_donation_25"
@@ -89,6 +98,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:visibility="gone" />
+
+    <!-- Other views -->
+
+
+
+
 
 
 </FrameLayout>
